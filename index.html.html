@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>long drive offitial </title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background:black
+    }
+    .signup-box {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 35px;
+      width: 350px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      color: white;
+    }
+    .signup-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    .signup-box input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      outline: none;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .signup-box input::placeholder {
+      color: #555;
+    }
+    .signup-box button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #ff512f, #dd2476);
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+    .signup-box button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="signup-box">
+    <h2>Create Account</h2>
+    <form onsubmit="return checkPassword()">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email Address" required>
+      <input type="tel" id="mobile" placeholder="Mobile Number" required>
+      <input type="password" id="password" placeholder="Create Password" required>
+      <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+
+  <script>
+    function checkPassword() {
+      let pass = document.getElementById("password").value;
+      let confirmPass = document.getElementById("confirm-password").value;
+
+      if (pass !== confirmPass) {
+        alert("Passwords do not match!");
+        return false;
+      }
+      return true;
+    }
+  </script>
+
+</body>
+</html>
